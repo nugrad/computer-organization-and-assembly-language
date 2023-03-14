@@ -1,0 +1,103 @@
+Q1:
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+.data
+val1 SDWORD 8000
+.code
+main PROC
+mov eax,val1
+add eax,1h
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+----------------------------------------------------------------------------------------------------------
+Q2:
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+.data
+val1 SDWORD 8000
+.code
+main PROC
+mov ax ,7FF0h
+add al,10h
+add ah,1
+add ax,2
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+------------------------------------------------------------------------------------------------------------------
+Q3:
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+.data
+array byte 61h,42h,11h,52h,25h
+array2 byte 5 dup(?)
+.code
+main PROC
+mov al,[array+2]
+mov array2,al
+mov al,[array+4]
+mov [array2+1],al
+mov al,[array+1]
+mov [array2+2],al
+mov al,[array+3]
+mov al,array
+mov [array2+4],al
+movzx eax,[array2]
+movzx ebx,[array2+1]
+movzx ecx,[array2+2]
+movzx edx,[array2+3]
+movzx esi,[array2+4]
+
+
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+------------------------------------------------------------------------------------------------------------------
+Q4:
+TITLE Question:4 (Test.asm)
+INCLUDE Irvine32.inc
+.data
+arrayB BYTE 10, 20, 30
+arrayW WORD 150, 250, 350
+arrayD DWORD 600, 1200, 1800
+sum1 DWORD 0
+sum2 DWORD 0
+sum3 DWORD 0
+.code
+main PROC
+movzx eax, [arrayB]
+add sum1, eax
+movzx eax, [arrayW]
+add sum1, eax
+mov eax, [arrayD]
+add sum1, eax
+mov eax, sum1
+movzx ebx, [arrayB+1]
+add sum2, ebx
+movzx ebx, [arrayW+2]
+add sum2, ebx
+mov ebx, [arrayD+4]
+add sum2, ebx
+mov ebx, sum2
+movzx ecx, [arrayB+2]
+add sum3, ecx
+movzx ecx, [arrayW+4]
+add sum3, ecx
+mov ecx, [arrayD+8]
+add sum3, ecx
+mov ecx, sum3
+call DumpRegs
+exit
+main ENDP
+END main
+----------------------------------------------------------------------------------------------------------------------

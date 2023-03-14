@@ -1,0 +1,194 @@
+Q1)TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax, 47d
+
+add eax, 39d
+add eax, 60d
+add eax, 85d
+
+add eax, 64d
+add eax, 54o
+sub eax, 0Ah
+call DumpRegs
+exit
+main ENDP
+END main
+---------------------------
+Q2)
+TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax, 30d
+
+sub eax, 9d
+add eax, 186d
+sub eax, 150d
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+--------------------
+Q3)
+TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax, 101110b
+
+add eax, 50Ah
+add eax, 6710d
+add eax, 1010001b
+add eax, 0Fh
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+--------------------
+Q4)
+TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax, 10001101b
+
+sub eax, 0D83h
+add eax, 385d
+add eax, 10d
+add eax, 1111101b
+sub eax, 0Eh
+add eax,0Fh
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+---------------------
+Q5)
+TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax, 101b
+
+sub eax, 9d
+add eax, 1A4h
+
+sub eax, 56o
+
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EXERCISE 2 :->
+Q1)
+TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax,20d
+mov ebx,15d
+mov ecx,8d
+mov edx,17d
+
+
+add edx,eax
+add edx,1d
+add edx,ebx
+sub edx,ecx
+add edx,0Ah
+sub edx,65o
+add edx,73d
+
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+---------------------------
+Q2)
+TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax,20d
+mov ebx,15d
+
+
+
+add eax,5ADh
+sub eax,ebx
+add eax,65o
+add eax,65d
+add eax,11110111b
+
+add eax,150d
+
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+-------------------------
+Q3)
+TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+mov eax,20d
+mov ebx,15d
+
+
+
+add ebx,5ADh
+sub ebx,eax
+add ebx,65d
+add ebx,73o
+sub ebx,11100101b
+
+add ebx,7Bh
+
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+--------------------------
+Q4)
+TITLE My First Program (Test.asm)
+INCLUDE Irvine32.inc
+.code
+main PROC
+
+mov ebx,15d
+
+
+
+mov ecx,110010101101b
+add ecx,45h
+sub ecx,73o
+add ecx,ebx
+sub ecx,ecx
+
+add ecx,1d
+
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+-----------------------------------------------------------------------------------------------------------------------------------------------

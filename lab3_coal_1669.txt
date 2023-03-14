@@ -1,0 +1,120 @@
+Q1:
+INCLUDE Irvine32.inc
+.data
+V1 SWORD ?
+V2 SBYTE-10
+.code
+main PROC
+call DumpRegs
+exit
+main ENDP
+END main
+
+---------------------------
+Q2:
+INCLUDE Irvine32.inc
+.data
+val3 SDWORD -2147483648
+.code
+main PROC
+call DumpRegs
+exit
+main ENDP
+END main
+
+---------------------------
+Q3:
+INCLUDE Irvine32.inc
+.data
+var WORD 1,2,3
+.code
+main PROC
+call DumpRegs
+exit
+main ENDP
+END main
+-------------------------
+Q4:
+INCLUDE Irvine32.inc
+.data
+fav BYTE 'gold', 0
+A WORD 12
+B WORD 2
+Ce WORD 13
+D WORD 8
+E WORD 14
+.code
+main PROC
+call DumpRegs
+exit
+main ENDP
+END main
+--------------------
+Q5:
+INCLUDE Irvine32.inc
+.data
+A DWORD 10h
+B DWORD 15h
+CC DWORD 20h
+D DWORD 30h
+.code
+main PROC
+mov ebx,A
+add ebx,B
+sub ebx,A
+add ebx,B
+add ebx,CC
+add ebx,D
+call DumpRegs
+exit
+main ENDP
+END main
+------------------------
+Q6:
+INCLUDE Irvine32.inc
+.data
+A DWORD 10000b
+B DWORD 10101b
+CC DWORD 100000b
+D DWORD 110000b
+.code
+main PROC
+mov ebx,A
+add ebx,B
+sub ebx,A
+add ebx,B
+add ebx,CC
+add ebx,D
+call DumpRegs
+exit
+main ENDP
+END main
+------------------------
+Q7:
+INCLUDE Irvine32.inc
+.data
+Imm8 = 20
+Data1 DWORD 8
+Data2 DWORD 15
+Data3 DWORD 20
+
+.code
+main PROC
+mov eax,0
+mov eax,Imm8
+add eax,data1
+sub eax ,data3
+add eax,Imm8
+add eax,data2
+
+call DumpRegs
+exit
+main ENDP
+END main
+----------------------------------
+
+
+
+
+
+

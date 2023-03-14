@@ -1,0 +1,159 @@
+Q1:What errors are present in the following?
+ MOV AX 3d    -> no , before 3
+ MOV 23, AX   -> register must be written before 23 and type of 23 must be defined ie 23d
+ MOV CX, CH   -> CX store values of CH
+ MOVE AX, 1h  -> no  such command as MOVE
+ADD 2, CX    -> an integer cannot store the value of a register
+ ADD 3, 6     -> 3 cannot store the value of 6
+ INC AX, 2    -> we cannot increment 2 only 1 can be incremeneted
+-----------------------------------------------------------------------------------------
+Q2:
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+.data
+a1 DWORD "H00",0
+a2 BYTE 'a'
+a3 BYTE 'm'
+.code
+main PROC
+mov eax,0
+mov eax,a1
+mov ah,a2
+mov al,a3
+
+call DumpRegs
+exit
+main ENDP
+END main
+---------------------------------------------------------------------------------------------
+Q3:
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+.data
+varB BYTE +10
+varW WORD -150
+varD DWORD 600
+.code
+main PROC
+mov eax,varD
+movzx ebx,varW
+movzx ecx,varB
+
+call DumpRegs
+exit
+main ENDP
+END main
+--------------------------------------------------------------------------------------------------
+Q4:
+a)
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+.data
+Val1 DWORD 25h
+Val2 BYTE 36o
+Val3 WORD 20d
+.code
+main PROC
+mov eax,0
+add eax,89d
+add eax,74Fh
+sub eax, 47o
+sub eax, 28d
+add eax ,11011b
+
+call DumpRegs
+exit
+main ENDP
+END main
+----------------------------
+b)
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+.data
+Val1 DWORD 25h
+Val2 BYTE 36o
+Val3 WORD 20d
+.code
+main PROC
+mov eax,0
+movzx ebx,Val2
+movzx ecx,Val3
+add eax,Val1
+add eax,ebx
+sub eax,654h
+add eax,ecx
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+-----------------------------------------------------------------------------------------------
+Q6:
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+
+Secondsinday EQU 24*60*60
+
+.data
+
+.code
+main PROC
+seconds=24*60*60
+mov eax, Secondsinday
+mov ebx, seconds
+
+
+call DumpRegs
+exit
+main ENDP
+END main
+
+-----------------------------------------------------------------------------------------------
+Q7:
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+
+.data
+A WORD 0FF10h
+B WORD 0E10Bh
+
+.code
+main PROC
+mov eax, 0
+mov ax, A
+xchg ax, B
+mov A, ax
+
+call DumpRegs
+exit
+main ENDP
+END main
+
+
+-----------------------------------------------------------------------------------------------
+Q8:
+
+TITLE  (Test.asm)
+INCLUDE Irvine32.inc
+
+.data
+val1 BYTE 10h
+val2 WORD 8000h 
+val3 DWORD 0FFFFh
+val4 WORD 7FFFh
+
+.code
+main PROC
+movzx eax, val2
+inc eax
+sub eax, val3
+mov ebx, 0
+mov bx, val2
+sub bx, val4
+
+call DumpRegs
+exit
+main ENDP
+END main
+
